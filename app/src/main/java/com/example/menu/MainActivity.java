@@ -1,7 +1,10 @@
 package com.example.menu;
 
 
+import android.content.Intent;
+import android.view.MotionEvent;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.MotionEventCompat;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.annotation.RequiresApi;
@@ -102,5 +105,10 @@ public class MainActivity extends AppCompatActivity implements CalendarAdapter.O
             String message = "Selected Date " + dayText + monthYearFromDate(selectedDate);
             Toast.makeText(this, message, Toast.LENGTH_LONG).show();
         }
+    }
+
+    public void weeklyAction(View view)
+    {
+        startActivity(new Intent(this, WeekViewActivity.class));
     }
 }
